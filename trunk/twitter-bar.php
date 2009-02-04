@@ -75,12 +75,12 @@ img {border: none;}
 	
 	$obtwitter=new Twitter($this->username,$this->password);
 	$xml=$obtwitter->twitterCapture();
-	var_dump($xml);
 
 ?>
 <div id="twit">
 <div id="closed" style="display:none;"> 
-<a href="javascript:void(0);"  onclick="document.getElementById('opened').style.display='block'; document.getElementById('closed').style.display='none';"><img src="twittbar/open.gif"  alt="+"/></a> <span  > <a href="javascript:void(0);"  onclick="document.getElementById('opened').style.display='block'; document.getElementById('closed').style.display='none';">Open</a></span> </div><div id="opened"> <a href="http://twitter.com/statuses/user_timeline/12883272.rss"><span id="rss" style="display: block; float: right;margin-top: 2px;margin-right: 2px;"><img src="twittbar/rss.gif" width="20px" alt="Rss"/></span></a> <a href="javascript:void(0);"  onclick="document.getElementById('opened').style.display='none'; document.getElementById('closed').style.display='block';"><span id="close"><img src="twittbar/close.gif"  alt="Close"/></span></a> <span id="spTheme"></span> <span id="sp"><span id="sp0"></span></span> <script language="javascript">
+<a href="javascript:void(0);"  onclick="document.getElementById('opened').style.display='block'; document.getElementById('closed').style.display='none';"><img src="twittbar/open.gif"  alt="+"/></a> <span  > <a href="javascript:void(0);"  onclick="document.getElementById('opened').style.display='block'; document.getElementById('closed').style.display='none';">Open</a></span> </div><div id="opened"> <a href="http://twitter.com/statuses/user_timeline/12883272.rss"><span id="rss" style="display: block; float: right;margin-top: 2px;margin-right: 2px;"><img src="twittbar/rss.gif" width="20px" alt="Rss"/></span></a> <a href="javascript:void(0);"  onclick="document.getElementById('opened').style.display='none'; document.getElementById('closed').style.display='block';"><span id="close"><img src="twittbar/close.gif"  alt="Close"/></span></a> <span id="spTheme"></span> <span id="sp"><span id="sp0"></span></span> 
+<script language="javascript">
 <?
 
 	$i=0;
@@ -88,7 +88,7 @@ img {border: none;}
 		
 ?>
 	theme[<?=$i;?>]='<a href="<?=$twitter_url; ?><?=$item->id; ?>" class="theme" id="spTheme<?=$i; ?>">Twitter /</a>';
-	titre[<?=$i;?>]='<a href="<?=$twitter_url; ?><?=$item->id; ?>"  class="titre" id="sp<?=$i; ?>"><?=$item->text; ?></a>';
+	titre[<?=$i;?>]='<a href="<?=$twitter_url; ?><?=$item->id; ?>"  class="titre" id="sp<?=$i; ?>"><?=htmlspecialchars($item->text,ENT_QUOTES); ?></a>';
 <?
 		$i++;
 	}

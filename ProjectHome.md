@@ -1,0 +1,1 @@
+Twittbar is PHP class which feed data from Twitter REST services. Twittbar has a pretty presentation, represent by using CSS and Javascript, it easy to change and customized to your web site so  you can fetch user status, freind status, public status and another methods which provided by Twitter APIs. Twittbar writen in PHP5 and CURL.
